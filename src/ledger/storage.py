@@ -7,6 +7,7 @@ from pathlib import Path
 
 from ledger.models import Transaction
 
+
 def read_csv(path: Path) -> list[Transaction]:
     """Reads a CSV file with the columns of a `Transaction`, one row per transaction."""
     with open(path, newline="") as f:

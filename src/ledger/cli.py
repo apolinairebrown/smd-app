@@ -11,9 +11,11 @@ from ledger import reports, storage
 
 DEFAULT_FILE = Path("data/transactions.csv")
 
+
 def print_totals(totals: dict[str, Decimal]) -> None:
     for name, total in totals.items():
         print(f"{name:<10} {total:>10}")
+
 
 def print_spending(spending: dict[str, Decimal]) -> None:
     table = Table(title="Spending by category")
@@ -22,6 +24,7 @@ def print_spending(spending: dict[str, Decimal]) -> None:
     for category, total in spending.items():
         table.add_row(category, f"{total:,.2f}")
     Console().print(table)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
